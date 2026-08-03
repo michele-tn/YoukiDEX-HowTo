@@ -29,7 +29,7 @@ description: A practical setup and usage guide for YoukiDEX, the Android desktop
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#features">Features</a>
         <a href="#setup">Setup</a>
-        <a href="#faq">FAQ</a>
+        <a href="#demos">Demos</a>
       </nav>
       <a class="button button-small" href="https://github.com/mrYouki/YoukiDex-Android-Desktop/releases/latest">Download</a>
     </header>
@@ -54,7 +54,7 @@ Interface     System overlay
 Launcher      Existing launcher supported
 Optional      Shizuku or root
 License       GPL-3.0</code></pre>
-          <div class="window-note"><span>01</span><p>No launcher swap<br>required.</p></div>
+          <div class="window-note"><p>No launcher swap<br>required.</p></div>
         </div>
       </section>
 
@@ -82,19 +82,19 @@ License       GPL-3.0</code></pre>
         </div>
         <div class="theme-grid" role="list" aria-label="YoukiDEX requirements">
           <article class="theme-card" role="listitem">
-            <span class="theme-number">01</span><span class="swatch swatch-paper"></span>
+            <span class="swatch swatch-paper"></span>
             <strong>Android 11+</strong><small>Version 2.7 requires API 30 or newer</small>
           </article>
           <article class="theme-card" role="listitem">
-            <span class="theme-number">02</span><span class="swatch swatch-midnight"></span>
+            <span class="swatch swatch-midnight"></span>
             <strong>Accessibility</strong><small>Lets the dock follow system and window events</small>
           </article>
           <article class="theme-card" role="listitem">
-            <span class="theme-number">03</span><span class="swatch swatch-terminal"></span>
+            <span class="swatch swatch-terminal"></span>
             <strong>Overlay access</strong><small>Allows the dock to remain above other apps</small>
           </article>
           <article class="theme-card" role="listitem">
-            <span class="theme-number">04</span><span class="swatch swatch-sakura"></span>
+            <span class="swatch swatch-sakura"></span>
             <strong>Shizuku / ADB</strong><small>Recommended for privileged desktop controls</small>
           </article>
         </div>
@@ -121,19 +121,15 @@ License       GPL-3.0</code></pre>
         </div>
         <div class="steps">
           <article class="step">
-            <span class="step-index">01</span>
             <div><h3>Install the current APK</h3><p>Download the latest package from the project’s GitHub Releases page. Android may ask you to allow installs from your browser or file manager.</p></div>
           </article>
           <article class="step">
-            <span class="step-index">02</span>
             <div><h3>Grant the core permissions</h3><p>Open YoukiDEX and follow the prompts for overlay, Accessibility, usage access and notification access. Each permission controls a separate part of the desktop.</p></div>
           </article>
           <article class="step">
-            <span class="step-index">03</span>
             <div><h3>Add the Quick Settings tile</h3><p>Edit Android’s Quick Settings panel, find the YoukiDEX tile and drag it into the active area. Use this tile to enter or leave desktop mode.</p></div>
           </article>
           <article class="step">
-            <span class="step-index">04</span>
             <div><h3>Choose your layout</h3><p>Open YoukiDEX settings to select a centered floating dock or the classic edge-pinned layout. Configure colors, transparency, icon packs and your preferred wallpaper app.</p></div>
           </article>
         </div>
@@ -186,6 +182,37 @@ adb shell appops set \
           <img src="https://raw.githubusercontent.com/mrYouki/YoukiDex-Android-Desktop/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="YoukiDEX desktop interface running on Android" loading="lazy">
           <figcaption>Official YoukiDEX screenshot from the upstream repository.</figcaption>
         </figure>
+      </section>
+
+      <section class="content-section demo-section" id="demos" aria-labelledby="demos-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Video demonstrations</p><h2 id="demos-title">See the desktop<br>in motion.</h2></div>
+          <p>These community posts capture the Material DEX interface during the 2.5 development cycle. They are useful for understanding the dock, window behavior and overall workflow before installing.</p>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-meta"><span>Material DEX update</span><small>YoukiDEX 2.5</small></div>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline aria-label="YoukiDEX 2.5 Material DEX demonstration">
+                <source src="{{ '/assets/videos/youkidex-2.5-material-dex-with-audio.mp4' | relative_url }}" type="video/mp4">
+                Your browser does not support HTML5 video. Use the Reddit link below to watch the demonstration.
+              </video>
+            </div>
+            <p>Demonstrates Shizuku integration, Material You styling, the centered floating dock and the transparent appearance option.</p>
+            <a class="text-link" href="https://www.reddit.com/r/fossdroid/comments/1s6yfae/youkidex_25_material_dex_update_is_here_shizuku/">Open on Reddit <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="demo-card">
+            <div class="demo-meta"><span>Development preview</span><small>YoukiDEX 2.5 beta 6</small></div>
+            <div class="video-frame">
+              <video controls preload="metadata" playsinline aria-label="YoukiDEX 2.5 beta 6 demonstration">
+                <source src="{{ '/assets/videos/youkidex-2.5-beta-6-with-audio.mp4' | relative_url }}" type="video/mp4">
+                Your browser does not support HTML5 video. Use the Reddit link below to watch the demonstration.
+              </video>
+            </div>
+            <p>An earlier development demonstration that shows the direction of the desktop interface before the stable Material DEX release.</p>
+            <a class="text-link" href="https://www.reddit.com/r/fossdroid/comments/1s1akrh/app_youkidex_25_beta_6/">Open on Reddit <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
       </section>
 
       <section class="launch" id="troubleshooting" aria-labelledby="launch-title">
