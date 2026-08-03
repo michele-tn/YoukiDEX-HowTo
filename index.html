@@ -1,0 +1,259 @@
+---
+layout: null
+title: YoukiDEX — Android Desktop Setup Guide
+description: A practical setup and usage guide for YoukiDEX, the Android desktop experience by mrYouki.
+---
+<!doctype html>
+<html lang="en" data-theme="paper">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="theme-color" content="#f3efe6">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:type" content="website">
+    <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="YoukiDEX home">
+        <span class="brand-mark" aria-hidden="true">Y</span>
+        <span>YoukiDEX</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#setup">Setup</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="button button-small" href="https://github.com/mrYouki/YoukiDex-Android-Desktop/releases/latest">Download</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Android desktop, properly set up</p>
+          <h1 id="hero-title">Your tablet.<br><em>Your desktop.</em></h1>
+          <p class="hero-intro">YoukiDEX adds a persistent dock, app drawer, notification panel and desktop-style window controls to Android. It runs over your current launcher, so you can try it without rebuilding your home screen.</p>
+          <div class="hero-actions">
+            <a class="button" href="#setup">Set up YoukiDEX</a>
+            <a class="text-link" href="https://github.com/mrYouki/YoukiDex-Android-Desktop">Open the source repository <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-window" aria-label="YoukiDEX compatibility summary">
+          <div class="window-bar"><i></i><i></i><i></i><span>device / compatibility</span></div>
+          <pre><code><span class="code-muted"># Current requirements</span>
+Android       11 or newer
+Package       com.youki.dex
+Interface     System overlay
+Launcher      Existing launcher supported
+Optional      Shizuku or root
+License       GPL-3.0</code></pre>
+          <div class="window-note"><span>01</span><p>No launcher swap<br>required.</p></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Desktop toolkit</p><h2 id="features-title">What YoukiDEX<br>adds to Android.</h2></div>
+          <p>YoukiDEX is a desktop layer rather than a cosmetic launcher. Its services connect the dock, windows, notifications and system controls while your existing launcher remains available underneath.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span>Dock</span><h3>Persistent taskbar</h3><p>Keep pinned and running applications visible over other apps. Choose a centered KDE-style dock or a classic edge-pinned layout.</p></article>
+          <article class="feature-card"><span>Windows</span><h3>Freeform applications</h3><p>Open supported applications in resizable floating windows, minimize them from the taskbar and restore them with another tap.</p></article>
+          <article class="feature-card"><span>Navigation</span><h3>App drawer and shortcuts</h3><p>Search and sort installed applications, apply third-party icon packs and long-press icons to open Android deep shortcuts.</p></article>
+          <article class="feature-card"><span>System</span><h3>Tray and quick controls</h3><p>See battery, Wi-Fi, Bluetooth and audio status. Use the quick panel for brightness, volume and notification management.</p></article>
+          <article class="feature-card"><span>Workflow</span><h3>Keyboard and Multi-Display</h3><p>Use hardware keyboard shortcuts, hot corners and multiple connected displays for a more conventional desktop workflow.</p></article>
+          <article class="feature-card"><span>Personalization</span><h3>Material You and profiles</h3><p>Adjust colors, bubble opacity, dock transparency, sound events, profile picture and the wallpaper shortcut.</p></article>
+          <article class="feature-card"><span>Performance</span><h3>Resource monitor</h3><p>Display live CPU and RAM information in the taskbar while working across applications.</p></article>
+          <article class="feature-card"><span>Advanced</span><h3>Root and Shizuku</h3><p>Use automatic Magisk or KernelSU detection, or grant privileged shell access through Shizuku without keeping ADB connected.</p></article>
+        </div>
+      </section>
+
+      <section class="theme-lab" id="requirements" aria-labelledby="themes-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Before you install</p><h2 id="themes-title">Know what<br>YoukiDEX needs.</h2></div>
+          <p>The basic desktop works with standard Android permissions. Recent apps, display controls and other system-level features need one additional setup step.</p>
+        </div>
+        <div class="theme-grid" role="list" aria-label="YoukiDEX requirements">
+          <article class="theme-card" role="listitem">
+            <span class="theme-number">01</span><span class="swatch swatch-paper"></span>
+            <strong>Android 11+</strong><small>Version 2.7 requires API 30 or newer</small>
+          </article>
+          <article class="theme-card" role="listitem">
+            <span class="theme-number">02</span><span class="swatch swatch-midnight"></span>
+            <strong>Accessibility</strong><small>Lets the dock follow system and window events</small>
+          </article>
+          <article class="theme-card" role="listitem">
+            <span class="theme-number">03</span><span class="swatch swatch-terminal"></span>
+            <strong>Overlay access</strong><small>Allows the dock to remain above other apps</small>
+          </article>
+          <article class="theme-card" role="listitem">
+            <span class="theme-number">04</span><span class="swatch swatch-sakura"></span>
+            <strong>Shizuku / ADB</strong><small>Recommended for privileged desktop controls</small>
+          </article>
+        </div>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <caption>Application requirements</caption>
+            <tbody>
+              <tr><th scope="row">Minimum Android</th><td>Android 11.0 (API 30)</td></tr>
+              <tr><th scope="row">Target Android</th><td>Android 14 (API 34)</td></tr>
+              <tr><th scope="row">Application ID</th><td><code>com.youki.dex</code></td></tr>
+              <tr><th scope="row">Project language</th><td>Kotlin 1.9.24</td></tr>
+              <tr><th scope="row">Build system</th><td>Gradle</td></tr>
+              <tr><th scope="row">Legacy devices</th><td>Version 2.6 is the final release for Android 10 and earlier</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide" id="setup" aria-labelledby="guide-title">
+        <div class="guide-intro">
+          <p class="eyebrow">First-time setup</p>
+          <h2 id="guide-title">Up and running,<br>step by step.</h2>
+          <p>Start with the standard permissions, test the dock, then add elevated access only if you need the advanced controls.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-index">01</span>
+            <div><h3>Install the current APK</h3><p>Download the latest package from the project’s GitHub Releases page. Android may ask you to allow installs from your browser or file manager.</p></div>
+          </article>
+          <article class="step">
+            <span class="step-index">02</span>
+            <div><h3>Grant the core permissions</h3><p>Open YoukiDEX and follow the prompts for overlay, Accessibility, usage access and notification access. Each permission controls a separate part of the desktop.</p></div>
+          </article>
+          <article class="step">
+            <span class="step-index">03</span>
+            <div><h3>Add the Quick Settings tile</h3><p>Edit Android’s Quick Settings panel, find the YoukiDEX tile and drag it into the active area. Use this tile to enter or leave desktop mode.</p></div>
+          </article>
+          <article class="step">
+            <span class="step-index">04</span>
+            <div><h3>Choose your layout</h3><p>Open YoukiDEX settings to select a centered floating dock or the classic edge-pinned layout. Configure colors, transparency, icon packs and your preferred wallpaper app.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="permissions" aria-labelledby="permissions-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Permission reference</p><h2 id="permissions-title">What each<br>permission does.</h2></div>
+          <p>YoukiDEX asks for broad Android access because it coordinates windows and system UI. Grant only the functions you intend to use.</p>
+        </div>
+        <div class="permission-list">
+          <article><code>SYSTEM_ALERT_WINDOW</code><div><h3>Display over other apps</h3><p>Draws the dock, panels and desktop controls above normal application windows.</p></div></article>
+          <article><code>ACCESSIBILITY_SERVICE</code><div><h3>Window awareness</h3><p>Detects system UI and application-window events so the dock can react to foreground changes.</p></div></article>
+          <article><code>PACKAGE_USAGE_STATS</code><div><h3>Recent and running apps</h3><p>Provides the usage information required to populate recent-app and running-app views.</p></div></article>
+          <article><code>WRITE_SECURE_SETTINGS</code><div><h3>Protected display controls</h3><p>Enables system-level settings such as display-size adjustments. Android requires ADB, Shizuku or root to grant this access.</p></div></article>
+          <article><code>QUERY_ALL_PACKAGES</code><div><h3>Complete app drawer</h3><p>Lets YoukiDEX discover installed applications and present them in the searchable drawer.</p></div></article>
+          <article><code>NOTIFICATION_LISTENER</code><div><h3>Notification panel</h3><p>Reads active notifications for the desktop panel and allows supported notifications to be dismissed.</p></div></article>
+        </div>
+      </section>
+
+      <section class="anatomy" aria-labelledby="anatomy-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Optional elevated access</p><h2 id="anatomy-title">Unlock the<br>system controls.</h2></div>
+          <p>Shizuku is the most convenient route. Direct ADB commands are also available when you prefer a one-time wired setup.</p>
+        </div>
+        <div class="file-tree">
+          <div class="tree-lines" aria-label="ADB commands for YoukiDEX"><code>adb devices
+
+adb shell pm grant \
+  com.youki.dex \
+  android.permission.WRITE_SECURE_SETTINGS
+
+adb shell appops set \
+  com.youki.dex \
+  GET_USAGE_STATS allow</code></div>
+          <div class="tree-notes">
+            <p><span>Secure settings</span><strong>WRITE_SECURE_SETTINGS</strong> enables display-size and other protected system controls.</p>
+            <p><span>Recent applications</span><strong>GET_USAGE_STATS</strong> lets the desktop identify recently used and running apps.</p>
+            <p><span>Alternative</span><strong>Shizuku</strong> provides privileged shell access without leaving wireless ADB connected.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section screenshot-section" aria-labelledby="interface-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">The interface</p><h2 id="interface-title">Android, with<br>room to work.</h2></div>
+          <p>The official project screenshot shows the desktop layer in context. The exact appearance depends on device resolution, Android skin and your dock settings.</p>
+        </div>
+        <figure class="product-shot">
+          <img src="https://raw.githubusercontent.com/mrYouki/YoukiDex-Android-Desktop/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="YoukiDEX desktop interface running on Android" loading="lazy">
+          <figcaption>Official YoukiDEX screenshot from the upstream repository.</figcaption>
+        </figure>
+      </section>
+
+      <section class="launch" id="troubleshooting" aria-labelledby="launch-title">
+        <p class="eyebrow">Common fixes</p>
+        <h2 id="launch-title">When the dock<br>doesn’t behave.</h2>
+        <div class="launch-grid">
+          <ul class="checklist">
+            <li><strong>Dock missing after restart</strong><p>Enable auto-start and remove battery restrictions for YoukiDEX.</p></li>
+            <li><strong>Accessibility blocked</strong><p>On recent Android versions, install through ADB or allow restricted settings for the app.</p></li>
+            <li><strong>Floating windows unavailable on RedMagic or ZTE</strong><p>Enable “Force activities to be resizable” and “Enable freeform windows” in Developer Options. If the device provides Settings → Display → Desktop Mode, enable it, then reboot.</p></li>
+            <li><strong>Portrait-only apps</strong><p>Some applications hard-code their orientation and cannot be forced to landscape without system privileges.</p></li>
+          </ul>
+          <aside class="launch-card">
+            <span class="status-dot"></span>
+            <p>Official project</p>
+            <strong>mrYouki/YoukiDex-Android-Desktop</strong>
+            <small>Check the upstream release notes and issue tracker before troubleshooting an older build.</small>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Questions and answers</p><h2 id="faq-title">Before you<br>start debugging.</h2></div>
+          <p>Most setup problems come from Android security restrictions, manufacturer battery management or missing elevated permissions.</p>
+        </div>
+        <div class="faq-list">
+          <details open><summary>Must YoukiDEX replace my current launcher?</summary><p>No. Its normal operating mode is a system overlay, so the existing launcher remains untouched. Since version 2.5, YoukiDEX can also be selected as the default home application if you want it to load automatically.</p></details>
+          <details><summary>Why does the dock disappear after a reboot?</summary><p>Confirm that the YoukiDEX Accessibility Service is still enabled. Then allow auto-start and exclude the app from battery optimization or background-process restrictions imposed by the device manufacturer.</p></details>
+          <details><summary>Why does display-size control have no effect?</summary><p>That control requires <code>WRITE_SECURE_SETTINGS</code>. Start Shizuku and approve YoukiDEX when prompted, grant the permission through ADB, or use root access. Android does not expose this setting to ordinary third-party apps.</p></details>
+          <details><summary>Why is Accessibility blocked on Android 13, 14 or 15?</summary><p>Android may classify a sideloaded APK as a restricted application. Open the app information screen and allow restricted settings when that option is available. Alternatively, install the APK directly with <code>adb install YoukiDex.apk</code>.</p></details>
+          <details><summary>Do I need Shizuku?</summary><p>No for the basic overlay and dock. It is recommended for secure settings and privileged shell operations because it avoids maintaining a wireless ADB connection after the initial Shizuku setup.</p></details>
+          <details><summary>What should Android 10 users install?</summary><p>Use YoukiDEX 2.6. Starting with version 2.7, the minimum supported version is Android 11 because the project depends on more reliable overlay, freeform-window and Shizuku behavior introduced on newer Android releases.</p></details>
+          <details><summary>Are Android 16 overlay issues known?</summary><p>Yes. Android 16 introduced stricter overlay touch and inset behavior. The upstream project reports that core functions remain usable while remaining edge cases are addressed in later updates.</p></details>
+          <details><summary>Why is there no Google Play version?</summary><p>The application relies on sensitive permissions that are not suitable for its planned Play Store distribution model. Obtain the APK from the official GitHub Releases page and review the release notes before installing.</p></details>
+        </div>
+      </section>
+
+      <section class="content-section release-section" id="updates" aria-labelledby="updates-title">
+        <div>
+          <p class="eyebrow">Current release line</p>
+          <h2 id="updates-title">Version 2.7,<br>Simple Update.</h2>
+        </div>
+        <div class="release-copy">
+          <p>Version 2.7 adds a configurable wallpaper-app shortcut, improved Google Cast behavior and automatic Magisk or KernelSU detection. It also corrects forced landscape, caches the orientation decision for faster startup and moves dock animation work to the GPU render thread.</p>
+          <p>From this version onward, the maintainer plans smaller incremental releases such as 2.8 and 2.9 between larger milestone versions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://github.com/mrYouki/YoukiDex-Android-Desktop/releases/latest">Download latest APK</a>
+            <a class="text-link" href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/mrYouki/YoukiDex-Android-Desktop">Add to Obtainium <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section project-note" aria-labelledby="project-title">
+        <div><p class="eyebrow">Project notes</p><h2 id="project-title">Scope, credits<br>and expectations.</h2></div>
+        <div class="note-grid">
+          <article><h3>Project lineage</h3><p>YoukiDEX is based on Smart Dock and has been extensively modified by mrYouki. The project also credits the wider open-source Android community.</p></article>
+          <article><h3>Not currently planned</h3><p>Real-time background blur, iOS support, cloud settings sync and multi-user support are outside the project scope. Task Manager, dock widgets and a built-in file manager are listed as planned rather than available.</p></article>
+          <article><h3>Independent software</h3><p>YoukiDEX is an independent open-source project and is not affiliated with or endorsed by a device manufacturer or platform company.</p></article>
+          <article><h3>License and source</h3><p>The upstream repository is licensed under GPL-3.0. Use the official repository for source code, issue reporting, releases and authoritative project information.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">Y</span><span>YoukiDEX</span></a>
+      <p>Independent setup guide for the open-source YoukiDEX project by mrYouki.</p>
+      <a class="text-link" href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

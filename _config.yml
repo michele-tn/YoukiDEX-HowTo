@@ -1,0 +1,12 @@
+title: YoukiDEX
+description: A practical setup and usage guide for YoukiDEX on Android.
+url: "https://michele-tn.github.io"
+baseurl: "/YoukiDEX-HowTo"
+lang: en
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
